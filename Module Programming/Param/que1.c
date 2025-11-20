@@ -5,15 +5,20 @@
 
 static int var = 10;
 static char *st = "World";
-static int arr[]={1,2,3};
+static int arr[3] = {1, 2, 3};
+static int arr_len = 3;
 
 module_param(var,int,S_IRUGO);
 module_param(st,charp,S_IRUGO);
-module_param(arr,&arr,S_IRUGO);
+module_param_array(arr,int,&arr_len,S_IRUGO);
 
 static int __init hello(void){
   pr_info("var = %d\n",var);
   pr_info("st = %s\n",st);
+  
+  for(int i = 0; i < arr_len; i++){
+      pr_info("arr[%d] = %d\n", i, arr[i]);
+  }
   return 0;
 }
 
