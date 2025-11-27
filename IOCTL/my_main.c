@@ -48,7 +48,7 @@ static int myopen(struct inode *inode, struct file *file)
 
 static int myclose(struct inode *inode, struct file *file)
 {
-  printk(KERN_INFO"FILE OPEN\n");
+  printk(KERN_INFO"FILE CLOSE\n");
   return 0;
 }
 
