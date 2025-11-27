@@ -7,7 +7,9 @@ int main(){
   int fd = open("/dev/Atharva",O_RDWR);
   int st;
   int value = 100;
-  
+
+  // when we call this, the system switches from user mode > kernel mode 
+  // then it will find for the ioctl structure
   ioctl(fd,ON);
   ioctl(fd,OFF);
   ioctl(fd,STATUS,&st);
