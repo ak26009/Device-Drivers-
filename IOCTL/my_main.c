@@ -5,12 +5,12 @@
 #include<linux/cdev.h>
 #include"myhd.h"
 
-static dev_t dev=0;
+static dev_t dev;
 static struct class *my_class;
 static struct cdev my_cdev;
 
-static int led_s = 0;
-static int value = 0;
+static int led_s;
+static int value;
 
 static long myioctl(struct file *file, unsigned int cmd, unsigned long arg)
 {
