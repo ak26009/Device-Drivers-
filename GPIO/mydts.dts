@@ -1,0 +1,23 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "brcm,bcm2712";
+
+    fragment@0 {
+        target-path = "/";
+
+        __overlay__ {
+            led_test {
+                compatible = "mycompany,rpi-gpio-led";
+
+                /* GPIO26 on RP1 GPIO header, active-high (0) */
+                led-gpios = <&rp1_gpio 26 0>;
+
+                status = "okay";
+            };
+        };
+    };
+};
+
+
