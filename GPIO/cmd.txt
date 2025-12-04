@@ -1,0 +1,10 @@
+COMPILE THE DTS FILE TO GET DTBO FILE :
+dtc -@ -I dts -O dtb led-overlay.dts -o led-overlay.dtbo
+
+COPY THE DTBO FILE TO BELOW DIRECTORY :
+sudo cp led-overlay.dtbo /boot/firmware/overlays/
+
+WITH THE BELOW COMMAND CHECK WHETHER DTS FILE IS ADDED OR NOT :
+dtoverlay -l
+
+
