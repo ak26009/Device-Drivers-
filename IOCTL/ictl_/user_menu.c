@@ -38,9 +38,10 @@ int main()
 
         case 2:
             printf("Enter data: ");
+            getchar();
             fgets(ubuff, sizeof(ubuff), stdin);
-            len = strlen(ubuff);
-
+            //len = strlen(ubuff);
+            
             ioctl(fd, WRITE_BUFF, len);
             write(fd, ubuff, len);
 
